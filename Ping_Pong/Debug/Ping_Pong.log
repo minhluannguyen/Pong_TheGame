@@ -1,0 +1,23 @@
+﻿  pch.cpp
+  Ball.cpp
+e:\hoc tap\study\năm hai\oop\th\ping pong\ping_pong\ping_pong\ball.cpp(18): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+e:\hoc tap\study\năm hai\oop\th\ping pong\ping_pong\ping_pong\ball.cpp(19): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+e:\hoc tap\study\năm hai\oop\th\ping pong\ping_pong\ping_pong\ball.cpp(20): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+e:\hoc tap\study\năm hai\oop\th\ping pong\ping_pong\ping_pong\ball.cpp(21): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+e:\hoc tap\study\năm hai\oop\th\ping pong\ping_pong\ping_pong\ball.cpp(130): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+e:\hoc tap\study\năm hai\oop\th\ping pong\ping_pong\ping_pong\ball.cpp(139): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+e:\hoc tap\study\năm hai\oop\th\ping pong\ping_pong\ping_pong\ball.cpp(150): warning C4244: '=': conversion from 'float' to 'SHORT', possible loss of data
+e:\hoc tap\study\năm hai\oop\th\ping pong\ping_pong\ping_pong\ball.cpp(151): warning C4244: '=': conversion from 'float' to 'SHORT', possible loss of data
+e:\hoc tap\study\năm hai\oop\th\ping pong\ping_pong\ping_pong\ball.cpp(158): warning C4244: '=': conversion from 'float' to 'SHORT', possible loss of data
+e:\hoc tap\study\năm hai\oop\th\ping pong\ping_pong\ping_pong\ball.cpp(159): warning C4244: '=': conversion from 'float' to 'SHORT', possible loss of data
+  Paddle.cpp
+e:\hoc tap\study\năm hai\oop\th\ping pong\ping_pong\ping_pong\paddle.cpp(15): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+e:\hoc tap\study\năm hai\oop\th\ping pong\ping_pong\ping_pong\paddle.cpp(16): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+e:\hoc tap\study\năm hai\oop\th\ping pong\ping_pong\ping_pong\paddle.cpp(41): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+e:\hoc tap\study\năm hai\oop\th\ping pong\ping_pong\ping_pong\paddle.cpp(42): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+e:\hoc tap\study\năm hai\oop\th\ping pong\ping_pong\ping_pong\paddle.cpp(63): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+e:\hoc tap\study\năm hai\oop\th\ping pong\ping_pong\ping_pong\paddle.cpp(99): warning C4244: '=': conversion from 'float' to 'SHORT', possible loss of data
+e:\hoc tap\study\năm hai\oop\th\ping pong\ping_pong\ping_pong\paddle.cpp(100): warning C4244: '=': conversion from 'float' to 'SHORT', possible loss of data
+  Ping_Pong.cpp
+  Generating Code...
+  Ping_Pong.vcxproj -> E:\Hoc tap\Study\Năm hai\OOP\TH\Ping pong\Ping_Pong\Debug\Ping_Pong.exe
