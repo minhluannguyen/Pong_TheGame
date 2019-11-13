@@ -17,9 +17,7 @@ public:
 	void move(int);
 	void reset();
 	void selfControl(int, int, int, int);
+
 	COORD getCoord();
 	int getSize();
-
-	void gotoXY(HANDLE, COORD);
-
 };
