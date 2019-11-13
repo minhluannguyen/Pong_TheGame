@@ -10,8 +10,6 @@ int main()
 	SetConsoleCursorInfo(hOut, &ConCurInf);
 	//---------------------------------------------------------
 
-	//Khoi tao ham random
-	srand(unsigned int(time(NULL)));
 	// Menu chinh
 	mainMenu();	
 }

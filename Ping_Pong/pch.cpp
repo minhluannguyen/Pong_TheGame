@@ -1,15 +1,13 @@
 ﻿#include "pch.h"
 
-void gotoxy(int column, int line)
+void gotoxy(int x, int y)
 {
 	//Ham dua con tro toi toa do cho truoc
+	//x la ngang, y la doc
 	COORD coord;
-	coord.X = column;
-	coord.Y = line;
-	SetConsoleCursorPosition(
-		GetStdHandle(STD_OUTPUT_HANDLE),
-		coord
-	);
+	coord.X = x;
+	coord.Y = y;
+	SetConsoleCursorPosition(GetStdHandle(STD_OUTPUT_HANDLE), coord	);
 }
 
 void drawBoundary(int x, int y)
@@ -40,7 +38,7 @@ void drawBoundary(int x, int y)
 void PlayerWin(int id, int mode)
 {
 	//Khi bong cham bien cua 1 trong 2 nguoi choi
-
+	//id la nguoi choi thang, mode la che do choi
 	SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), 15);
 	//In ra thong bao va doi nguoi dung an SPACE
 
@@ -58,7 +56,7 @@ void PlayerWin(int id, int mode)
 	do
 	{
 		c = _getch();
-		if (c == '27')
+		if (c == 27)
 			return;
 	} while (c != ' ');
 	cin.sync();
@@ -67,12 +65,6 @@ void PlayerWin(int id, int mode)
 	cout << "               ";
 	gotoxy(width / 2 - 10, height / 2 + 1);
 	cout << "                            ";
-}
-
-float random_between_two_float(float min, float max)
-{
-	//Tao 1 so thuc ngau nhien trong khoang min toi max
-	return (min + 1) + (((float)rand()) / (float)RAND_MAX) * (max - (min + 1));
 }
 
 void printScore(int P1Score, int P2Score, int mode)
@@ -91,6 +83,9 @@ void printScore(int P1Score, int P2Score, int mode)
 bool winCondition(int P1Score, int P2Score, int mode, int topScore)
 {
 	//Ham kiem tra 1 trong 2 da dat diem toi da chua
+	//P1Score va P2Score la diem cua 2 nguoi choi
+	//mode la che do (1 la 2 nguoi choi, 2 la choi voi may)
+	//topScore la diem toi da
 	//Cho chu mau vang
 	SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), 14);
 	//Neu nguoi choi 1 thang thi in ra thong bao tuy theo che do choi
@@ -190,10 +185,10 @@ void Game(int mode, int level, int topScore)
 			if (mode == 2)
 				P2.selfControl(B.getVelocity().X, B.getCoord().X, B.getCoord().Y, level);
 
-			//Kiem tra va cham Paddle
-			int checkP = B.checkImpactPad(P1, P2);
 			//Kiem tra va cham tuong
 			int checkW = B.checkImpactWall();
+			//Kiem tra va cham Paddle
+			int checkP = B.checkImpactPad(P1, P2);
 
 			//Cac truong hop va cham
 			if (!(checkW == 3 || checkP == 1 || checkP == 2))
@@ -277,7 +272,7 @@ int compLevel()
 	//Menu chon do kho dau voi may
 	clearMenu(42, 14);
 	gotoxy(45, 14);
-	SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), 3);
+	SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), 11);
 	cout << "Easy" << endl;
 	gotoxy(45, 15);
 	cout << "Medium" << endl;
@@ -343,7 +338,7 @@ void scoreSetting(int &topScore)
 	clearMenu(42, 14);
 	//In menu thay doi diem
 	gotoxy(45, 14);
-	SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), 3);
+	SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), 11);
 	cout << "Score limit: " << topScore << "." << endl;
 	gotoxy(45, 15);
 	cout << "3" << endl;
@@ -405,6 +400,7 @@ void scoreSetting(int &topScore)
 
 void clearMenu(int startX, int startY)
 {
+	//Xoa menu
 	gotoxy(startX, startY);
 	for (int i = 1; i <= 6; i++)
 	{
@@ -417,7 +413,8 @@ void clearMenu(int startX, int startY)
 void titlePong(int canleTrai, int xuongDong)
 {
 	gotoxy(canleTrai, xuongDong);
-	SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), 14);
+	//Doi thanh mau xanh la (Green)
+	SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), 10);
 	cout << " #########         ######       ##       #       ####### " << endl; gotoxy(canleTrai, xuongDong + 1);
 	cout << " ##      ##       ##     #      ###      #      ##       " << endl; gotoxy(canleTrai, xuongDong + 2);
 	cout << " ##       ##     ##       #     # ##     #     ##        " << endl; gotoxy(canleTrai, xuongDong + 3);
@@ -444,7 +441,7 @@ void mainMenu()
 
 		//In ra menu chinh
 		gotoxy(45, 14);
-		SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), 3);
+		SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), 11);
 		cout << "Human vs. Human" << endl;
 		gotoxy(45, 15);
 		cout << "Human vs. Computer" << endl;

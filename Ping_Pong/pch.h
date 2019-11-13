@@ -5,13 +5,13 @@
 using namespace std;
 #include <windows.h>
 #include <conio.h>
-#include <time.h>
 
+//Khoi tao cac bien lien quan toi toc do
 #define START_BALL_SPEED 1
-#define MAX_BALL_SPEED_X 4
-#define MAX_BALL_SPEED_Y 2
+#define MAX_BALL_SPEED_X 3.5
 #define PADDLE_SPEED 1
 
+//Kich thuoc khung 
 #define width 100
 #define height 20
 
@@ -22,6 +22,5 @@ void mainMenu();
 void clearMenu(int startX, int startY);
 void gotoxy(int column, int line);
 void drawBoundary(int x, int y);
-float random_between_two_float(float min, float max);
 
 #endif //PCH_H
