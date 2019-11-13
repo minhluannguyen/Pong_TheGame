@@ -40,7 +40,7 @@ void Ball::draw()
 	y = int(coorY);
 	gotoxy(x, y);
 	SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), 12);
-	cout << "o";
+	cout << "O";
 	SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), 5);
 }
 
@@ -63,9 +63,9 @@ void Ball::reset()
 		vx = -START_BALL_SPEED;
 	//Bong di chuyen doc (do nay) cho truoc va khong doi (duong di xuong, am di len)
 	if (rand() % 2 + 0)
-		vy = 1;
+		vy = START_BALL_SPEED;
 	else
-		vy = -1;	
+		vy = -START_BALL_SPEED;	
 }
 
 void Ball::move()
@@ -85,7 +85,7 @@ int Ball::checkImpactWall()
 {
 	//Kiem tra va cham voi tuong
 	//Cham tuong duoi
-	if (coorY + vy >= height + 1)
+	if (coorY + vy > height)
 	{
 		//Doi theo huong doc nguoc lai
 		vy = -vy;
@@ -114,38 +114,41 @@ int Ball::checkImpactWall()
 		draw();
 		return 2;
 	}
+	//Tra ve 3 neu khong va cham
 	return 3;
 }
 
 int Ball::checkImpactPad(Paddle p1, Paddle p2)
 {
+	//Kiem tra bong co va cham voi thanh truot khong
 	int size = p1.getSize();
 	float desX = coorX + vx;
 	float desY = coorY + vy;
+	//So voi thanh truot ben phai
 	if (desX > p2.getCoord().X - fabs(vx) && desX <= p2.getCoord().X && desY >= p2.getCoord().Y && desY <= p2.getCoord().Y + size)
 	{
 		coorX = p2.getCoord().X;
-		//coorY += vy;
-		//vx += float(coorX - p1.getCoord().X) / 3;
 		vx = vx + vx * 0.1;
 		vx = -vx;
 		draw();
 		return 2;
 	}
+	//So voi thanh truot ben trai
 	if (desX < p1.getCoord().X + fabs(vx) && desX >= p1.getCoord().X && desY >= p1.getCoord().Y && desY <= p1.getCoord().Y + size)
 	{
 		coorX = p1.getCoord().X;
-		//coorY += vy;
 		vx = vx + vx * 0.1;
 		vx = -vx;
 		draw();
 		return 1;
 	}
+	//Neu khong xay ra va cham tra ve -1
 	return -1;
 }
 
 COORD Ball::getVelocity()
 {
+	//Tra ve toc do cua bong
 	COORD Velo;
 	Velo.X = vx;
 	Velo.Y = vy;
@@ -154,6 +157,7 @@ COORD Ball::getVelocity()
 
 COORD Ball::getCoord()
 {
+	//Tra ve toa do cua bong
 	COORD p;
 	p.X = coorX;
 	p.Y = coorY;
