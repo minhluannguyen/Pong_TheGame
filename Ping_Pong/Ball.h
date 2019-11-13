@@ -5,8 +5,11 @@
 class Ball
 {
 protected:
+	//Toa do hien tai
 	float coorX, coorY;
+	//Toa do truoc do
 	float OriX, OriY;
+	//Toc do theo 2 phuong tung hoanh
 	float vx, vy;
 public:
 	Ball();
